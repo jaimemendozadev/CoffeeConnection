@@ -1,0 +1,70 @@
+[
+    {"name": "Blonde Roast", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/594ffeee3b1442ccbd7e926c51f45776.jpg"},
+
+    {"name": "Caffè Misto", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options":  ["Almond", "Coconut", "Nonfat Milk", "Whole Milk",  "2% Milk", "Soy (United States)"], "image_url": "https://globalassets.starbucks.com/assets/60058630d5a14a679054712b6afa77c3.jpg"},
+
+    {"name": "Clover® Brewed Coffee", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/25b52a59363e463c996908860b5efade.jpg"},
+
+    {"name": "Decaf Pike Place® Roast", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/376e8381434049798635d370bee0d7f0.jpg"},
+    
+    {"name": "Featured Dark Roast", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/b1258f28fbfc42b1a964e7bfc247eaf2.jpg"},
+    
+    {"name": "Iced Coffee", "size": ["Tall 12oz", "Grande 16oz", "Venti Iced 24oz", "Trenta Iced 31oz"], "created_by": "Starbucks", "options": ["Sweetened", "Unsweetened"], "image_url": "https://globalassets.starbucks.com/assets/12be45c393e94b0e934535c905d9d44c.jpg"},
+    
+    {"name": "Iced Coffee with Milk", "size": ["Tall 12oz", "Grande 16oz", "Venti Iced 24oz", "Trenta Iced 31oz"], "created_by": "Starbucks", "options": ["Almond", "Coconut", "Nonfat Milk", "Whole Milk",  "2% Milk", "Soy (United States)", "Sweetened", "Unsweetened"], "image_url": "https://globalassets.starbucks.com/assets/e0a6575422764c648e04beb50cdb63ee.jpg"},
+
+    {"name": "Nariño 70 Cold Brew", "size": ["Tall 12oz", "Grande 16oz", "Venti Iced 24oz", "Trenta Iced 31oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/9908416e060d4d7b858b19a733c642ce.jpg"},
+    
+    {"name": "Nariño 70 Cold Brew with Milk", "size": ["Tall 12oz", "Grande 16oz", "Venti Iced 24oz", "Trenta Iced 31oz"], "created_by": "Starbucks", "options": ["Almond", "Coconut", "Nonfat Milk", "Whole Milk",  "2% Milk", "Soy (United States)"], "image_url": "https://globalassets.starbucks.com/assets/bf068e4a09d34812aed61ddc1139a57b.jpg"},
+    
+    {"name": "Nitro Cold Brew", "size": ["Tall 12oz", "Grande 16oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/5aa2cac008124e2d9ce5568e35579ae5.jpg"},
+    
+    {"name": "Nitro Cold Brew with Sweet Cream", "size": ["Tall 12oz", "Grande 16oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/9a317780dd034d3fa681c3ec10ffd35a.jpg"},
+    
+    {"name": "Pike Place® Roast", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/a084629b03704d2aa2d183a0f057f9b7.jpg"},
+
+    {"name": "Toasted Coconut Cold Brew", "size": ["Tall 12oz", "Grande 16oz", "Venti Iced 24oz", "Trenta Iced 31oz"], "created_by": "Starbucks", "options": ["Almond", "Coconut", "Nonfat Milk", "Whole Milk",  "2% Milk", "Soy (United States)"], "image_url": "https://globalassets.starbucks.com/assets/ce4a720e2e104fc2a803196d74652eda.jpg"},
+
+    {"name": "Vanilla Sweet Cream Cold Brew", "size": ["Tall 12oz", "Grande 16oz", "Venti Iced 24oz", "Trenta Iced 31oz"], "created_by": "Starbucks", "options": [], "image_url": "https://globalassets.starbucks.com/assets/b46638c85364413e88d21275b2bf29c2.jpg"},
+    
+
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""},
+    
+    {"name": "", "size": ["Short 8oz", "Tall 12oz", "Grande 16oz", "Venti 20oz"], "created_by": "Starbucks", "options": [], "image_url": ""}
+]
