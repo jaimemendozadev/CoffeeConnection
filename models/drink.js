@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const DrinkSchema = new Schema({
   drink_name: {
-    type: String,
-    required: true
+    type: String
   }
   //to be added more below
 });

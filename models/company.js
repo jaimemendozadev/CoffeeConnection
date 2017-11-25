@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const CompanySchema = new Schema({
   company_name: {
-    type: String,
-    required: true
+    type: String
   }
   //to be added as needed.
 });
