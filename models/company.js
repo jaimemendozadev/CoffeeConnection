@@ -6,6 +6,7 @@ const CompanySchema = new Schema({
     type: String,
     required: true
   }
+  //to be added as needed.
 });
 
 const Company = mongoose.model('company', CompanySchema);
