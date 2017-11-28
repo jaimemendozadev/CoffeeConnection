@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CompanySchema = new Schema({
-  company_name: {
+  name: {
     type: String
   }
   //to be added as needed.
