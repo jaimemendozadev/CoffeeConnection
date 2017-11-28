@@ -6,8 +6,11 @@ const routes = require('./routes/routes');
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://CupOfJoesCoffeeConnection:coffeeisgood1@ds119306.mlab.com:19306/coffeeconnection');
 
+const DB_URL = process.env.DB_URL;
+
+
+mongoose.connect(DB_URL);
 
 app.use(bodyParser.json());
 routes(app);
