@@ -6,7 +6,7 @@ const OrderListSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'company'
   },
-  date: Date,
+  date: { type : Date, default: Date.now },
   orders: [{
     type: Schema.Types.ObjectId,
     ref: 'order'
