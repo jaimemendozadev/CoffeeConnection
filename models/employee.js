@@ -17,6 +17,7 @@ const EmployeeSchema = new Schema({
   job_title: {
     type: String
   },
+  isBeverageFetcher: Boolean,
   companies: [{
     type: Schema.Types.ObjectId,
     ref: 'company'
