@@ -6,10 +6,12 @@ const OrderSchema = new Schema({
     type: Schema.types.ObjectId,
     ref: 'employee'
   },
-  drinks: [{
-    type: Schema.types.ObjectId,
-    ref: 'drink'
-  }]
+  drinks: [
+    {
+      type: Schema.types.ObjectId,
+      ref: 'drink'
+    }
+  ]
 });
 
 const Order = mongoose.model('order', OrderSchema);

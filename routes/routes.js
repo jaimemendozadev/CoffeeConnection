@@ -1,6 +1,6 @@
 const Employee = require('../models/employee');
 
-module.exports = (app) => {
+module.exports = app => {
   app.get('/api/employees', (req, res, next) => {
     Employee.find()
       .then(employees => res.send(employees))
@@ -10,6 +10,6 @@ module.exports = (app) => {
     const employeeProps = req.body;
     Employee.create(employeeProps)
       .then(employee => res.send(employee))
-      .catch(next)
-  })
+      .catch(next);
+  });
 };

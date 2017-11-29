@@ -10,10 +10,11 @@ const DrinkSchema = new Schema({
   size: {
     type: String
   },
-  created_by: {  //company where you get the drink from
+  created_by: {
+    //company where you get the drink from
     type: String
   },
-  ingredients: [IngredientSchema], 
+  ingredients: [IngredientSchema],
   options: {
     type: String
   }

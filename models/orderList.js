@@ -6,11 +6,13 @@ const OrderListSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'company'
   },
-  date: { type : Date, default: Date.now },
-  orders: [{
-    type: Schema.Types.ObjectId,
-    ref: 'order'
-  }]
+  date: { type: Date, default: Date.now },
+  orders: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'order'
+    }
+  ]
 });
 
 const OrderList = mongoose.model('orderList', OrderListSchema);
