@@ -9,7 +9,6 @@ mongoose.Promise = global.Promise;
 
 const DB_URL = process.env.DB_URL;
 
-
 mongoose.connect(DB_URL);
 
 app.use(bodyParser.json());
