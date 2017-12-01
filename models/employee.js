@@ -16,14 +16,15 @@ const EmployeeSchema = new Schema({
   },
   job_title: {
     type: String
-  }
-  // //set up association below
-  // company: {
-  //   type: Schema.Types.ObjectId, ref: 'company'
-  // },
-  // favorite_drink: {
-  //   type: Schema.Types.ObjectId, ref: 'drink'
-  // }
+  },
+  companies: [{
+    type: Schema.Types.ObjectId,
+    ref: 'company'
+  }],
+  favorite_drinks: [{
+    type: Schema.Types.ObjectId,
+    ref: 'drink'
+  }]
 });
 
 const Employee = mongoose.model('employee', EmployeeSchema);
