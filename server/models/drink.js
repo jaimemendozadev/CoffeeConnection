@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const IngredientSchema = require('./ingredient');
 
 const DrinkSchema = new Schema({
   name: {
@@ -10,11 +9,16 @@ const DrinkSchema = new Schema({
   size: {
     type: String
   },
-  created_by: {
-    //company where you get the drink from
-    type: String
+  store: {
+    type: Schema.Types.ObjectId,
+    ref: 'store'
   },
-  ingredients: [IngredientSchema],
+  ingredients: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'ingredient'
+    }
+  ],
   options: {
     type: String
   }
