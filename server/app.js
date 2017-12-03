@@ -1,14 +1,17 @@
 const express = require('express');
 const Router = require('./router');
-const mongoose = require('mongoose');
+const conn = require('./DB');
 const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
 
-mongoose.Promise = global.Promise;
-const DB_URL = process.env.DB_URL;
-mongoose.connect(DB_URL);
+conn.on('error', console.error.bind(console, 'connection error:'));
+conn.once('open', () => {
+  console.log("Connected to the DB!");
+});
+
+
 
 app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(bodyParser.urlencoded({extended: false}));

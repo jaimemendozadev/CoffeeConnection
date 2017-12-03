@@ -1,5 +1,5 @@
 const Router = require('express').Router();
-const Employee = require('../models/employee');
+const Employee = require('../DB/models/employee');
 
 Router.get('/employees', (req, res, next) => {
   res.send("<h1>Hit get /employees endpoint bruh</h1>");
