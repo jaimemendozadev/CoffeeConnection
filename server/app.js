@@ -12,7 +12,6 @@ conn.once('open', () => {
 });
 
 
-
 app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

@@ -6,23 +6,36 @@ const DrinkSchema = new Schema({
     type: String,
     required: true
   },
-  size: {
-    type: String
-  },
+  size: [],
   store: {
     type: Schema.Types.ObjectId,
     ref: 'store'
   },
+  ingredients: [],
+  image_url: {
+    type: String
+  },
+  options: {
+    type: String
+  }
+});
+
+/**********************************************
+ *Temporarily amending schema for simplification
+ ***********************************************
+  size: {
+    type: String
+  },
+
   ingredients: [
     {
       type: Schema.Types.ObjectId,
       ref: 'ingredient'
     }
   ],
-  options: {
-    type: String
-  }
-});
+*/
+
+
 
 const Drink = mongoose.model('drink', DrinkSchema);
 
