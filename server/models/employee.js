@@ -17,14 +17,19 @@ const EmployeeSchema = new Schema({
   job_title: {
     type: String
   },
-  companies: [{
-    type: Schema.Types.ObjectId,
-    ref: 'company'
-  }],
-  favorite_drinks: [{
-    type: Schema.Types.ObjectId,
-    ref: 'drink'
-  }]
+  isBeverageFetcher: Boolean,
+  companies: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'company'
+    }
+  ],
+  favorite_drinks: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'drink'
+    }
+  ]
 });
 
 const Employee = mongoose.model('employee', EmployeeSchema);
