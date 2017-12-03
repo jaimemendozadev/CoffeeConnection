@@ -1,14 +1,27 @@
 {
-  "name": "coffeeConnection",
+  "name": "coffeeconnection",
   "version": "1.0.0",
   "description": "app for creating beverage preferences",
   "main": "index.js",
-  "repository": "https://github.com/CupOfJoes/CoffeeConnection.git",
-  "author": "Vivian Sze, Jo Tchon, JayMoon, YiHua Lou, Jeremy DeCarvalho",
-  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CupOfJoes/CoffeeConnection.git"
+  },
+  "author": "Vivian Sze, Jo Tchon, JayMoon, YiHua Lou, Jeremy DeCarvalho, Jaime Mendoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CupOfJoes/CoffeeConnection/issues"
+  },
+  "homepage": "https://github.com/CupOfJoes/CoffeeConnection#readme",
   "dependencies": {
-    "path": "^0.12.7",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
