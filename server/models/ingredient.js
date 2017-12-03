@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 const IngredientSchema = new Schema({
   name: String
+  // to be added (such as quantity, size etc)
 });
 
-module.exports = IngredientSchema;
+const Ingredient = mongoose.model('ingredient', IngredientSchema);
+
+module.exports = Ingredient;
