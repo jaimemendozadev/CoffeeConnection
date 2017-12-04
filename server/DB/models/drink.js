@@ -8,8 +8,7 @@ const DrinkSchema = new Schema({
   },
   size: [],
   store: {
-    type: Schema.Types.ObjectId,
-    ref: 'store'
+    type: String
   },
   ingredients: [],
   image_url: {
@@ -33,6 +32,10 @@ const DrinkSchema = new Schema({
       ref: 'ingredient'
     }
   ],
+  store: {
+    type: Schema.Types.ObjectId,
+    ref: 'store'
+  },
 */
 
 

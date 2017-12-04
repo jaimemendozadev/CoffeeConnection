@@ -1,6 +1,25 @@
+require("dotenv").load();
+
 const casual = require('casual');
 const fs = require('fs');
 const path = require('path');
+
+const drinks = require('./Drink.json');
+
+const Company = require('../server/DB/models/company.js');
+const Drink = require('../server/DB/models/drink.js');
+const Employee = require('../server/DB/models/employee.js');
+const Store = require('../server/DB/models/store.js');
+
+
+
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+const mongoDB = process.env.DB_URL;
+
+mongoose.connect(mongoDB);
+const db = mongoose.connection;
+
 
 const jobTitles = [
   "Account Executive",
@@ -53,26 +72,19 @@ const jobTitles = [
 ];
 
 
-
-function generateCompanyName(){
-  let company = casual.company_name;
-
-  company = company.replace(/\s+/, "_").toLowerCase();
-
-  return company;
+function sanitizeCompanyName(company){  
+  let newCompanyName = company.replace(/\s+/, "_").toLowerCase();
+  return newCompanyName;
 }
 
 function generateRandomJob(){
   let randomIdx = Math.floor(Math.random() * jobTitles.length);
-
   return jobTitles[randomIdx];
 }
 
 
-
-
-function createUserJSON(){
-  const company = generateCompanyName();
+function createUsers(companyName){
+  const company = sanitizeCompanyName(companyName);
   const companyEmail = `@${company}.com`;
 
   let users = [];
@@ -95,14 +107,63 @@ function createUserJSON(){
     users.push(newUser);
   }
 
-  users = JSON.stringify(users);
-  let users_path = path.resolve(__dirname, 'Users.json')
-
-  fs.writeFile(users_path, users, 'utf8', (err) => {
-    if (err) throw err;
-    console.log('The file has been saved!');
-  });
+  return users;
 }
 
-createUserJSON();
+function initiateDBSeeding(){
+  const newCompany = casual.company_name;
+  let newUsers = createUsers(newCompany);
+  
+  let companyP = Company.create({name: newCompany});
+  let employeeP = Employee.create(newUsers);
+  let drinkP = Drink.create(drinks);
+
+  Promise.all([companyP, employeeP, drinkP]).then(result => {
+    console.log("companyP/employeeP/drinkP promises resolved! ");
+    closeDB();
+  })
+  .catch(error => {
+    console.log("There was an error resolving the employee/company/drinks promise ", error);
+
+    closeDB();
+  });
+
+}
+
+function closeDB() {
+  db.close(() => {
+    console.log("The connection to the database has been terminated.");
+  });
+};
+
+function runSeedDBFunc() {
+  db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
+  db.on("connected", function() {
+    console.log("Successfully connected to DB!");
+    let companyP = Company.remove({});
+    let employeeP = Employee.remove({});
+    let drinkP = Drink.remove({});
+
+    Promise.all([companyP, employeeP, drinkP]).then(results => {
+      console.log("Company, Employee, Drinks records dropped. ");
+      initiateDBSeeding();
+    });
+
+  });
+};
+
+runSeedDBFunc();
+
+
+
+
+
+
+
+
+
+
+
+
 
