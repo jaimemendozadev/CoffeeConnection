@@ -6,38 +6,85 @@ var path = require('path');
 //   'react', 'react-redux', 'react-dom', 'react-input-range','react-router','axios','express','express-graphql', 'body-parser','dotenv','mongoose','passport','path','rimraf','webpack','babel-core','babel-loader','babel-preset-env','babel-preset-es2015','css-loader','nodemon','style-loader','webpack-dev-server'
 // ];
 
-module.exports = {
-  target: 'node',
-  entry: {
-    bundle: './index.js'
-  //  vendor: VENDOR_LIBS
-  },
+var serverConfig = {
+  // target: 'node',
+  // entry: {
+  //   bundle: './index.js'
+  //   //  vendor: VENDOR_LIBS
+  // },
+  // output: {
+  //   path: path.join(__dirname, 'dist'),
+  //   filename: '[name].[chunkHash].js'
+  // },
+  // stats: {
+  //   warnings: false
+  // },
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.js$/,
+  //       use: 'babel-loader',
+  //       exclude: /node_modules/
+  //     },
+  //     {
+  //       test: /\.css$/,
+  //       use: ['style-loader', 'css-loader']
+  //     }
+  //   ]
+  // },
+  // plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  //   }),
+  //   new webpack.optimize.CommonsChunkPlugin({
+  //     names: ['vendor', 'manifest']
+  //   }),
+  //   new HtmlWebpackPlugin({
+  //     template: 'client/public/index.html'
+  //   })
+  // ]
+};
+
+var clientConfig = {
+  target: 'web',
+  context: __dirname,
+  entry: './client/src/App.jsx',
+  devtool: 'cheap-eval-source-map',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    path: path.join(__dirname, 'client/public'),
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
+  },
+  devServer: {
+    publicPath: '/client/public/',
+    historyApiFallback: true
+  },
+  stats: {
+    colors: true,
+    reasons: true,
+    chunks: true
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader',
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        loaders: ['style-loader', 'css-loader']
       }
     ]
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
-    }),
-    new HtmlWebpackPlugin({
-      template: 'client/public/index.html'
-    })
-  ]
+  }
 };
+
+module.exports = [clientConfig];

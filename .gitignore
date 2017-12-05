@@ -61,3 +61,8 @@ typings/
 
 # Jetbrain IDE
 .idea
+
+# seed data
+data.json
+
+public/
