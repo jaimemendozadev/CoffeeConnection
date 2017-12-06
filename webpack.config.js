@@ -7,42 +7,39 @@ var path = require('path');
 // ];
 
 var serverConfig = {
-  // target: 'node',
-  // entry: {
-  //   bundle: './index.js'
-  //   //  vendor: VENDOR_LIBS
-  // },
-  // output: {
-  //   path: path.join(__dirname, 'dist'),
-  //   filename: '[name].[chunkHash].js'
-  // },
-  // stats: {
-  //   warnings: false
-  // },
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /\.js$/,
-  //       use: 'babel-loader',
-  //       exclude: /node_modules/
-  //     },
-  //     {
-  //       test: /\.css$/,
-  //       use: ['style-loader', 'css-loader']
-  //     }
-  //   ]
-  // },
-  // plugins: [
-  //   new webpack.DefinePlugin({
-  //     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-  //   }),
-  //   new webpack.optimize.CommonsChunkPlugin({
-  //     names: ['vendor', 'manifest']
-  //   }),
-  //   new HtmlWebpackPlugin({
-  //     template: 'client/public/index.html'
-  //   })
-  // ]
+  target: 'node',
+  entry: {
+    bundle: './index.js'
+    //  vendor: VENDOR_LIBS
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].[chunkhash].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest']
+    }),
+    new HtmlWebpackPlugin({
+      template: 'dist/index.html'
+    })
+  ]
 };
 
 var clientConfig = {
@@ -71,20 +68,20 @@ var clientConfig = {
       {
         enforce: 'pre',
         test: /\.jsx?$/,
-        loader: 'eslint-loader',
+        use: 'eslint-loader',
         exclude: /node_modules/
       },
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader']
       }
     ]
   }
 };
 
-module.exports = [clientConfig];
+module.exports = [clientConfig, serverConfig];
