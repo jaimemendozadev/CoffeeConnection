@@ -59,5 +59,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# notes
+scratchNotes.js
+
 # Jetbrain IDE
 .idea
