@@ -64,3 +64,8 @@ scratchNotes.js
 
 # Jetbrain IDE
 .idea
+
+# seed data
+data.json
+
+public/
