@@ -33,10 +33,12 @@ const EmployeeSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'order'
   },
-  order_history: [{
-    type: Schema.Types.ObjectId,
-    ref: 'order'
-  }]
+  order_history: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'order'
+    }
+  ]
 });
 
 const Employee = mongoose.model('employee', EmployeeSchema);
