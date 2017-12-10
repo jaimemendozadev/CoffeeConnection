@@ -7,8 +7,8 @@ const DrinkSchema = new Schema({
     required: true
   },
   store: {
-      type: Schema.Types.ObjectId,
-      ref: 'store'
+    type: Schema.Types.ObjectId,
+    ref: 'store'
   },
   available_sizes: [],
   milk_options: [],
