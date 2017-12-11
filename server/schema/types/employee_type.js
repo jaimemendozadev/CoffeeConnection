@@ -9,7 +9,8 @@ const EmployeeType = new GraphQLObjectType({
   name: 'EmployeeType',
   fields: {
     id: { type: GraphQLID },
-    email: { type: GraphQLString }
+    email: { type: GraphQLString },
+    full_name: { type: GraphQLString }
   }
 });
 
