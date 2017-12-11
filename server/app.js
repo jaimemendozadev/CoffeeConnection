@@ -41,10 +41,10 @@ app.use('/graphql', expressGraphQL({
   graphiql: true
 }));
 
+app.use('/api', Router);
+
 app.use((err, req, res, next) => {
   res.status(422).send({ error: err.message });
 });
-
-app.use('/api', Router);
 
 module.exports = app;
