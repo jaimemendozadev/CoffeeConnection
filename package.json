@@ -23,8 +23,10 @@
   "dependencies": {
     "aws-sdk": "^2.162.0",
     "axios": "^0.17.1",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "casual": "^1.5.17",
+    "crypto": "^1.0.1",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-graphql": "^0.6.11",
