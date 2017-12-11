@@ -1,5 +1,6 @@
+const mongoose = require('mongoose');
 const Router = require('express').Router();
-const Employee = require('../DB/models/employee');
+const Employee = mongoose.model('employee');
 
 Router.get('/employees', (req, res, next) => {
   Employee.find()
