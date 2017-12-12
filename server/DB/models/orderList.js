@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const OrderListSchema = new Schema({
   company: {
@@ -15,6 +15,4 @@ const OrderListSchema = new Schema({
   ]
 });
 
-const OrderList = mongoose.model('orderList', OrderListSchema);
-
-module.exports = OrderList;
+mongoose.model('orderList', OrderListSchema);

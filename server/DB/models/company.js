@@ -1,13 +1,23 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const CompanySchema = new Schema({
   name: {
-    type: String
+    type: String,
+    required: true,
+    text: true,
+    trim: true
+  },
+  employees: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'employee'
+    }
+  ],
+  beverage_fetcher: {
+    type: Schema.Types.ObjectId,
+    ref: 'employee'
   }
-  //to be added as needed.
 });
 
-const Company = mongoose.model('company', CompanySchema);
-
-module.exports = Company;
+mongoose.model('company', CompanySchema);
