@@ -28,9 +28,10 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
   });
 }));
 
-function signup({ email, password, req }) {
-  const employee = new Employee({ email, password });
+function signup({ email, password, first_name, last_name, req }) {
+  const employee = new Employee({ email, password, first_name, last_name });
   if (!email || !password) { throw new Error('You must provide an email and password.'); }
+  if (!first_name || !last_name) { throw new Error('You must provide first name and last name.'); }
   return Employee.findOne({ email })
     .then(existingUser => {
       if (existingUser) { throw new Error('Email in use'); }
