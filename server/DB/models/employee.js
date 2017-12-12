@@ -6,12 +6,12 @@ const { Schema } = mongoose;
 const EmployeeSchema = new Schema({
   first_name: {
     type: String,
-    // required: true,
+    required: true,
     trim: true
   },
   last_name: {
     type: String,
-    // required: true,
+    required: true,
     trim: true
   },
   email: {
@@ -78,7 +78,6 @@ EmployeeSchema.pre('save', function(next) {
 });
 
 EmployeeSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
-  console.log("candidatePassword: ", candidatePassword);
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
     cb(err, isMatch);
   });

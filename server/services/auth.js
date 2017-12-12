@@ -16,15 +16,14 @@ passport.deserializeUser((id, done) => {
 
 passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
   Employee.findOne({ email: email.toLowerCase() }, (err, employee) => {
-    console.log(err, employee);
     if (err) { return done(err); }
-    if (!employee) { return done(null, false, 'Invalid Credentials 1'); }
+    if (!employee) { return done(null, false, 'Invalid Credentials'); }
     employee.comparePassword(password, (err, isMatch) => {
       if (err) { return done(err); }
       if (isMatch) {
         return done(null, employee);
       }
-      return done(null, false, 'Invalid credentials 2.');
+      return done(null, false, 'Invalid credentials.');
     });
   });
 }));

@@ -7,7 +7,6 @@ const session = require('express-session');
 const passport = require('passport');
 const passportService = require('./services/auth');
 const MongoStore = require('connect-mongo')(session);
-const Router = require('./router');
 const conn = require('./DB');
 const schema = require('./schema/schema');
 const { DB_URL, PASSPORT_SECRET } = process.env;
@@ -40,8 +39,6 @@ app.use('/graphql', expressGraphQL({
   schema,
   graphiql: true
 }));
-
-app.use('/api', Router);
 
 app.use((err, req, res, next) => {
   res.status(422).send({ error: err.message });
