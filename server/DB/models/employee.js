@@ -6,12 +6,12 @@ const { Schema } = mongoose;
 const EmployeeSchema = new Schema({
   first_name: {
     type: String,
-    required: true,
+    // required: true,
     trim: true
   },
   last_name: {
     type: String,
-    required: true,
+    // required: true,
     trim: true
   },
   email: {
@@ -66,19 +66,19 @@ EmployeeSchema.pre('save', function(next) {
     bcrypt.hash(employee.password, salt, null, (err, hash) => {
       if (err) { return next(err); }
       employee.password = hash;
+
+      var currentDate = new Date();
+      employee.updated_at = currentDate;
+      if (!employee.created_at) {
+        employee.created_at = currentDate;
+      }
       next();
     });
   });
-
-  var currentDate = new Date();
-  this.updated_at = currentDate;
-  if (!this.created_at) {
-    this.created_at = currentDate;
-  }
-  next();
 });
 
 EmployeeSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
+  console.log("candidatePassword: ", candidatePassword);
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
     cb(err, isMatch);
   });

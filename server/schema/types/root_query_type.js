@@ -19,6 +19,12 @@ const RootQuery = new GraphQLObjectType({
       resolve(parentValue, { id }){
         return Employee.findById(id);
       }
+    },
+    user: {
+      type: EmployeeType,
+      resolve(parentValue, args, req) {
+        return req.user;
+      }
     }
   })
 });

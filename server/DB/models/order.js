@@ -13,7 +13,7 @@ const OrderSchema = new Schema({
   selected_size: String,
   selected_milk: String,
   other_options: String,
-  created_at: { type: Date, default: Date.now },
+  created_at: { type: Date, default: Date.now }
 });
 
 mongoose.model('order', OrderSchema);

@@ -2,7 +2,8 @@ const graphql = require('graphql');
 const {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLID
+  GraphQLID,
+  GraphQLBoolean
 } = graphql;
 
 const EmployeeType = new GraphQLObjectType({
@@ -10,7 +11,9 @@ const EmployeeType = new GraphQLObjectType({
   fields: {
     id: { type: GraphQLID },
     email: { type: GraphQLString },
-    full_name: { type: GraphQLString }
+    full_name: { type: GraphQLString },
+    is_admin: { type: GraphQLBoolean },
+    is_beverage_fetcher: { type: GraphQLBoolean }
   }
 });
 

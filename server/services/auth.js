@@ -4,44 +4,44 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const Employee = mongoose.model('employee');
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
+passport.serializeUser((employee, done) => {
+  done(null, employee.id);
 });
 
 passport.deserializeUser((id, done) => {
-  Employee.findById(id, (err, user) => {
-    done(err, user);
+  Employee.findById(id, (err, employee) => {
+    done(err, employee);
   });
 });
 
 passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-  Employee.findOne({ email: email.toLowerCase() }, (err, user) => {
+  Employee.findOne({ email: email.toLowerCase() }, (err, employee) => {
+    console.log(err, employee);
     if (err) { return done(err); }
-    if (!user) { return done(null, false, 'Invalid Credentials'); }
-    user.comparePassword(password, (err, isMatch) => {
+    if (!employee) { return done(null, false, 'Invalid Credentials 1'); }
+    employee.comparePassword(password, (err, isMatch) => {
       if (err) { return done(err); }
       if (isMatch) {
-        return done(null, user);
+        return done(null, employee);
       }
-      return done(null, false, 'Invalid credentials.');
+      return done(null, false, 'Invalid credentials 2.');
     });
   });
 }));
 
 function signup({ email, password, req }) {
-  const user = new Employee({ email, password });
+  const employee = new Employee({ email, password });
   if (!email || !password) { throw new Error('You must provide an email and password.'); }
-
   return Employee.findOne({ email })
     .then(existingUser => {
       if (existingUser) { throw new Error('Email in use'); }
-      return user.save();
+      return employee.save();
     })
-    .then(user => {
+    .then(employee => {
       return new Promise((resolve, reject) => {
-        req.logIn(user, (err) => {
+        req.logIn(employee, (err) => {
           if (err) { reject(err); }
-          resolve(user);
+          resolve(employee);
         });
       });
     });
@@ -49,10 +49,10 @@ function signup({ email, password, req }) {
 
 function login({ email, password, req }) {
   return new Promise((resolve, reject) => {
-    passport.authenticate('local', (err, user) => {
-      if (!user) { reject('Invalid credentials.') }
+    passport.authenticate('local', (err, employee) => {
+      if (!employee) { reject('Invalid credentials.') }
 
-      req.login(user, () => resolve(user));
+      req.login(employee, () => resolve(employee));
     })({ body: { email, password } });
   });
 }
