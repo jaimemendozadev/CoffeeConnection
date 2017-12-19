@@ -3,3 +3,11 @@
 #npm run dev
 ##start webpack server
 #npm run serve
+
+## Resources
+
+`bootstrap`
+(https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+
+`react-bootstrap`
+(https://react-bootstrap.github.io/components.html)
