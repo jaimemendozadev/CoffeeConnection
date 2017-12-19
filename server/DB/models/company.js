@@ -10,7 +10,7 @@ const CompanySchema = new Schema({
   },
   employees: [{
     type: Schema.Types.ObjectId,
-    ref: 'team'
+    ref: 'employee'
   }],
   teams: [{
       type: Schema.Types.ObjectId,
