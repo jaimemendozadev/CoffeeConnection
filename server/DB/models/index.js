@@ -4,3 +4,4 @@ require('./employee');
 require('./order');
 require('./orderList');
 require('./store');
+require ('./team');
