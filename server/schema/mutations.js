@@ -48,7 +48,7 @@ const mutation = new GraphQLObjectType({
         name: { type: GraphQLString }
       },
       resolve(parentValue, { name }, req) {
-        return NewTeamHelper.NewTeam({name});
+        return name;
       }
     }
   }
