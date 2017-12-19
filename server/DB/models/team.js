@@ -14,11 +14,11 @@ const TeamSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'company'
   },
-  teamMembers: [{
+  team_members: [{
     type: Schema.Types.ObjectId,
     ref: 'employee'
   }],
-  teamFecther: [{
+  team_fecthers: [{
     type: Schema.Types.ObjectId,
     ref: 'employee'
   }]
