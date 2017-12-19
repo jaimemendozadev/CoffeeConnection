@@ -1,4 +1,5 @@
-## To start this app, run these commands below in three different terminal tabs
+### To start this app, run these commands below in two different terminal tabs.
+##start server
 #npm run dev
+##start webpack server
 #npm run serve
-#npm run webpack

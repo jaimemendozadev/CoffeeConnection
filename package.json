@@ -7,7 +7,6 @@
     "dev": "nodemon index.js",
     "build": "NODE_ENV=production webpack",
     "serve": "webpack-dev-server",
-    "webpack": "webpack -w",
     "clean": "rimraf dist",
     "dbseed": "node seed/index.js"
   },
