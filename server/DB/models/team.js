@@ -18,7 +18,7 @@ const TeamSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'employee'
   }],
-  team_fecthers: [{
+  beverage_fetchers: [{
     type: Schema.Types.ObjectId,
     ref: 'employee'
   }]
