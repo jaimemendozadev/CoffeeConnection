@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/CupOfJoes/CoffeeConnection#readme",
   "dependencies": {
+    "apollo-client": "^2.0.4",
     "aws-sdk": "^2.162.0",
     "axios": "^0.17.1",
     "bcrypt-nodejs": "0.0.3",
@@ -39,6 +40,7 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "react": "^16.2.0",
+    "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

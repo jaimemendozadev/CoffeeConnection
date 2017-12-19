@@ -15,7 +15,7 @@ const app = express();
 
 conn.on('error', console.error.bind(console, 'connection error:'));
 conn.once('open', () => {
-  console.log("Connected to the DB!");
+  console.log('Connected to the DB!');
 });
 
 app.use(express.static(path.join(__dirname, '../client/public')));
@@ -42,6 +42,11 @@ app.use('/graphql', expressGraphQL({
 
 app.use((err, req, res, next) => {
   res.status(422).send({ error: err.message });
+});
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 module.exports = app;
