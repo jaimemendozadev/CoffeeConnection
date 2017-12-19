@@ -21,6 +21,10 @@ const TeamSchema = new Schema({
   beverage_fetchers: [{
     type: Schema.Types.ObjectId,
     ref: 'employee'
+  }],
+  order_history: [{
+    type: Schema.Types.ObjectId,
+    ref: 'order'
   }]
 });
 
