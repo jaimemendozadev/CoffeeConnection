@@ -22,13 +22,7 @@ class Signup extends Component {
   handleClickGoogle() {}
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
-    console.log(this.state.firstName);
-    console.log(this.state.lastName);
-    console.log(this.state.email);
-    console.log(this.state.company);
-    console.log(this.state.password);
   }
 
   handleChange(event) {
