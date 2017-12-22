@@ -3,12 +3,10 @@ const { Schema } = mongoose;
 
 const StoreSchema = new Schema({
   name: String,
-  drinks: [
-    {
+  drinks: [{
       type: Schema.Types.ObjectId,
       ref: 'drink'
-    }
-  ]
+  }]
 });
 
 mongoose.model('store', StoreSchema);

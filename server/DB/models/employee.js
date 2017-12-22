@@ -25,31 +25,26 @@ const EmployeeSchema = new Schema({
     type: String,
     required: true
   },
-  job_title: {
-    type: String
-  },
-  is_beverage_fetcher: {
+  beverage_fetchers: [{
     type: Boolean,
     default: false
-  },
-  is_admin: {
-    type: Boolean,
-    default: false
-  },
-  company: {
+  }],
+  admins: [{
     type: Schema.Types.ObjectId,
     ref: 'company'
-  },
+  }],
+  companies: [{
+    type: Schema.Types.ObjectId,
+    ref: 'company'
+  }],
   favorite_order: {
     type: Schema.Types.ObjectId,
     ref: 'order'
   },
-  order_history: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'order'
-    }
-  ],
+  order_history: [{
+    type: Schema.Types.ObjectId,
+    ref: 'order'
+  }],
   updated_at: Date,
   created_at: Date
 }, { runSettersOnQuery: true });
