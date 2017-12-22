@@ -8,16 +8,18 @@ const CompanySchema = new Schema({
     text: true,
     trim: true
   },
-  employees: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'employee'
-    }
-  ],
-  beverage_fetcher: {
+  employees: [{
     type: Schema.Types.ObjectId,
     ref: 'employee'
-  }
+  }],
+  teams: [{
+    type: Schema.Types.ObjectId,
+    ref: 'team'
+  }],
+  order_list_history: [{
+    type: Schema.Types.ObjectId,
+    ref: 'orderList'
+  }]
 });
 
 mongoose.model('company', CompanySchema);
