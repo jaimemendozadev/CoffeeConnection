@@ -20,7 +20,7 @@ module.exports = {
     'brace-style': [2, '1tbs', { allowSingleLine: true }],
     'semi-spacing': 1,
     'key-spacing': 1,
-    'block-spacing': 1,
+    'block-spacing': [1, "always"],
     'comma-spacing': 1,
     'no-multi-spaces': 1,
     'space-before-blocks': 1,

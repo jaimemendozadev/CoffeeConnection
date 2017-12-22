@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Button, Image} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Button, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default class LandingPage extends Component {
   render() {
