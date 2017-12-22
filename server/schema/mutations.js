@@ -5,6 +5,8 @@ const {
 } = graphql;
 const EmployeeType = require('./types/employee_type');
 const AuthService = require('../services/auth');
+const TeamType = require('./types/team_type');
+const NewTeamHelper = require('../services/helpers');
 
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
@@ -38,6 +40,15 @@ const mutation = new GraphQLObjectType({
       },
       resolve(parentValue, { email, password }, req) {
         return AuthService.login({ email, password, req });
+      }
+    },
+    teamFecther: {
+      type: TeamType,
+      args: {
+        name: { type: GraphQLString }
+      },
+      resolve(parentValue, { name }, req) {
+        return name;
       }
     }
   }
