@@ -25,19 +25,4 @@ Make sure you're in the `crawler` directory and run:
 $ scrapy crawl <item_src> --set FEED_FORMAT=json --set FEED_URI="../feeds/%(time)s-%(name)s.json"
 ```
 
-Sample output:
-```json
-{
-  "name": "Iced Coffee",
-  "image_link": ...,
-  "details_link": ...,
-  "sizes": ["Trenta Iced", "Tall", "Grande", ... ],
-  "nutrition_facts": {
-    "calories": "80",
-    "calories_from_fat": "0",
-    "total_fat": "0g",
-    ...,
-  },
-  "ingredients": ["Ice", "Brewed Coffee", ... ]
-}
-```
+Exported feeds are saved in the `feeds` directory.
