@@ -6,7 +6,7 @@ const {
 const EmployeeType = require('./types/employee_type');
 const AuthService = require('../services/auth');
 const TeamType = require('./types/team_type');
-const NewTeamHelper = require('../services/helpers');
+//const NewTeamHelper = require('../services/helpers');
 
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
