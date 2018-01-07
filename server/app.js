@@ -7,6 +7,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportService = require('./services/auth');
 const MongoStore = require('connect-mongo')(session);
+const cors = require('cors');
 const conn = require('./DB');
 const schema = require('./schema/schema');
 const { DB_URL, PASSPORT_SECRET } = process.env;
@@ -17,6 +18,9 @@ conn.on('error', console.error.bind(console, 'connection error:'));
 conn.once('open', () => {
   console.log('Connected to the DB!');
 });
+
+
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -44,9 +48,5 @@ app.use((err, req, res, next) => {
   res.status(422).send({ error: err.message });
 });
 
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
-});
 
 module.exports = app;
