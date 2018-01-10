@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
-class Signup extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
       email: '',
-      company: '',
       password: ''
     };
 
@@ -23,6 +20,8 @@ class Signup extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log(this.state.email);
+    console.log(this.state.password);
   }
 
   handleChange(event) {
@@ -38,41 +37,27 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <h1>Create A New Account</h1>
+        <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
-            First Name:
-            <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
-          </label>
-          <label>
-            Last Name:
-            <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
-          </label>
-          <label>
-            Email:
+            email:
             <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
           </label>
           <label>
-            Company
-            <input type="text" name="company" value={this.state.company} onChange={this.handleChange} />
-          </label>
-          <label>
-            Password:
+            password:
             <input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
         <button onClick={this.handleClickFacebook}>Facebook</button>
-        <button onClick={this.handleClickGoogle}>Google+</button>
+        <button onClick={this.handleClickGoogle}>Google</button>
         <div>
-          <p>Already have an account?</p>
+          <p>New to CoffeeConnection?</p>
           <p>
-            Please <a href="">LOGIN</a>
+            Please <div><Link to='/signup'>Sign Up</Link></div>
           </p>
         </div>
       </div>
     );
   }
 }
-
-export default Signup;
