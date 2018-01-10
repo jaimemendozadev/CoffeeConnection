@@ -8,9 +8,9 @@ const OrderListSchema = new Schema({
   },
   date: { type: Date, default: Date.now },
   orders: [{
-      type: Schema.Types.ObjectId,
-      ref: 'order'
+    type: Schema.Types.ObjectId,
+    ref: 'order'
   }]
 });
 
-mongoose.model('orderList', OrderListSchema);
+module.exports = mongoose.model('orderList', OrderListSchema);

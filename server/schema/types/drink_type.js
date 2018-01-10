@@ -12,7 +12,7 @@ const DrinkType = new GraphQLObjectType({
   fields: {
     id: { type: GraphQLID },
     name: { type: GraphQLString },
-    available_size: { type: new GraphQLList(GraphQLString) },
+    available_sizes: { type: new GraphQLList(GraphQLString) },
     image_url: {type: GraphQLString}
   }
 });

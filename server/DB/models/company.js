@@ -22,4 +22,4 @@ const CompanySchema = new Schema({
   }]
 });
 
-mongoose.model('company', CompanySchema);
+module.exports = mongoose.model('company', CompanySchema);

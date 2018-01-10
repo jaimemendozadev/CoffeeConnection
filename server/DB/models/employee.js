@@ -78,4 +78,4 @@ EmployeeSchema.methods.comparePassword = function comparePassword(candidatePassw
   });
 };
 
-mongoose.model('employee', EmployeeSchema);
+module.exports = mongoose.model('employee', EmployeeSchema);

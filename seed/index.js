@@ -12,7 +12,6 @@ const Employee = require('../server/DB/models/employee.js');
 const Store = require('../server/DB/models/store.js');
 
 
-
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const mongoDB = process.env.DB_URL;

@@ -4,6 +4,8 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const Employee = mongoose.model('employee');
 
+
+
 passport.serializeUser((employee, done) => {
   done(null, employee.id);
 });
@@ -50,7 +52,7 @@ function signup({ email, password, first_name, last_name, req }) {
 function login({ email, password, req }) {
   return new Promise((resolve, reject) => {
     passport.authenticate('local', (err, employee) => {
-      if (!employee) { reject('Invalid credentials.') }
+      if (!employee) { reject('Invalid credentials.'); }
 
       req.login(employee, () => resolve(employee));
     })({ body: { email, password } });
