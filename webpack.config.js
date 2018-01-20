@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+=======
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+>>>>>>> cc29ab1e8cb630db3d11e4773bca5d718c957027
 var webpack = require('webpack');
 var path = require('path');
-
 var clientConfig = {
   target: 'web',
   context: __dirname,
@@ -10,6 +14,12 @@ var clientConfig = {
     path: path.join(__dirname, 'client/public'),
     filename: 'bundle.js'
   },
+  plugins: [
+    new CleanWebpackPlugin(['client/public']),
+    new HtmlWebpackPlugin({
+      title: 'CoffeeConnection'
+    })
+  ],
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },
@@ -42,5 +52,4 @@ var clientConfig = {
     ]
   }
 };
-
 module.exports = clientConfig;

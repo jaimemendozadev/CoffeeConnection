@@ -10,6 +10,8 @@ export default class Home extends Component {
         <div><Link to='/user'>Individual User Page</Link></div>
         <div><Link to='/employees'>View All Employees</Link></div>
         <div><Link to='/drinklist'>View List of All Drinks</Link></div>
+        <div><Link to='/signup'>Signup</Link></div>
+        <div><Link to='/login'>Login</Link></div>
         <div><Link to='/'>Log Out</Link></div>
       </div>
     );

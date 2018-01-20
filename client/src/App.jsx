@@ -20,6 +20,8 @@ import Home from './components/Home';
 import Public from './components/Public';
 import User from './components/User';
 import DrinkList from './components/DrinkList';
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 const FourOhFour = () => <h1>Uh Oh! 404 Page Not Found. Something happens!</h1>;
 
@@ -34,6 +36,8 @@ const App = () => (
           <Route exact path="/public" component={Public} />
           <Route exact path="/user" component={User} />
           <Route exact path='/drinklist' component={DrinkList} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
           <Route component={FourOhFour} />
         </Switch>
       </div>
