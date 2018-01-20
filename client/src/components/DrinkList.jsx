@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {graphql} from 'react-apollo';
+import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import * as queries from '../graphql/queries';
 
@@ -18,10 +18,8 @@ class DrinkList extends Component {
     if (loading) {
       return (<h1>Loading…</h1>);
     }
-    console.log('this.props are ', this.props);
     return (
-      <h1>DrinkList</h1>
-      
+      <h1>DrinkList</h1>      
     );
   }
 }
