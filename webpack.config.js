@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
->>>>>>> cc29ab1e8cb630db3d11e4773bca5d718c957027
 var webpack = require('webpack');
 var path = require('path');
 var clientConfig = {
