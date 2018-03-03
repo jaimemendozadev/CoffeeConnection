@@ -10,3 +10,12 @@ export const getAllDrinks = gql`
     }
   }
 `;
+
+
+export const getCurrentEmployee = gql`
+  query getCurrentEmployee {
+    currentEmployee @client {
+      name
+    }
+  } 
+`;

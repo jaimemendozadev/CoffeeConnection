@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import * as queries from '../graphql/queries';
 
-const {getAllDrinks} = queries;
+const {getAllDrinks, getCurrentEmployee} = queries;
 
 class DrinkList extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class DrinkList extends Component {
     if (loading) {
       return (<h1>Loading…</h1>);
     }
-    console.log('the props are ', this.props); 
+    
     return (
       <h1>DrinkList</h1>
            
@@ -26,4 +26,4 @@ class DrinkList extends Component {
   }
 }
 
-export default graphql(getAllDrinks)(DrinkList);
+export default graphql(getCurrentEmployee)(DrinkList);
