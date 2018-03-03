@@ -18,8 +18,10 @@ class DrinkList extends Component {
     if (loading) {
       return (<h1>Loading…</h1>);
     }
+    console.log('the props are ', this.props); 
     return (
-      <h1>DrinkList</h1>      
+      <h1>DrinkList</h1>
+           
     );
   }
 }
