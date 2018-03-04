@@ -1,11 +1,8 @@
-const graphql = require('graphql');
+const graphql = require('graphql')
 const {
   GraphQLObjectType,
-  GraphQLString,
-  GraphQLID,
-  GraphQLBoolean,
-  GraphQLList
-} = graphql;
+  GraphQLString
+} = graphql
 
 const ServerResponseType = new GraphQLObjectType({
   name: 'ServerResponseType',
@@ -13,6 +10,6 @@ const ServerResponseType = new GraphQLObjectType({
     name: { type: GraphQLString },
     status: { type: GraphQLString }
   }
-});
+})
 
-module.exports = ServerResponseType;
+module.exports = ServerResponseType

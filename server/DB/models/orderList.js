@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const OrderListSchema = new Schema({
   team: {
@@ -11,6 +11,6 @@ const OrderListSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'order'
   }]
-});
+})
 
-module.exports = mongoose.model('orderList', OrderListSchema);
+module.exports = mongoose.model('orderList', OrderListSchema)

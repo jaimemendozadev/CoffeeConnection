@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const {
   Schema
-} = mongoose;
+} = mongoose
 
 const TeamSchema = new Schema({
   name: {
@@ -26,6 +26,6 @@ const TeamSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'order'
   }]
-});
+})
 
-module.exports = mongoose.model('team', TeamSchema);
+module.exports = mongoose.model('team', TeamSchema)

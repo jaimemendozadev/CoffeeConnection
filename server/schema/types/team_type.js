@@ -1,10 +1,9 @@
-const graphql = require('graphql');
+const graphql = require('graphql')
 const {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLID,
-  GraphQLList
-} = graphql;
+  GraphQLID
+} = graphql
 
 const TeamType = new GraphQLObjectType({
   name: 'TeamType',
@@ -12,6 +11,6 @@ const TeamType = new GraphQLObjectType({
     name: { type: GraphQLString },
     id: { type: GraphQLID }
   }
-});
+})
 
-module.exports = TeamType;
+module.exports = TeamType

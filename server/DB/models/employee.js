@@ -1,7 +1,6 @@
-const crypto = require('crypto');
-const bcrypt = require('bcrypt-nodejs');
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const bcrypt = require('bcrypt-nodejs')
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const EmployeeSchema = new Schema({
   first_name: {
@@ -47,35 +46,35 @@ const EmployeeSchema = new Schema({
   }],
   updated_at: Date,
   created_at: Date
-}, { runSettersOnQuery: true });
+}, { runSettersOnQuery: true })
 
-EmployeeSchema.virtual('full_name').get(function() {
-  return `${this.first_name} ${this.last_name}`;
-});
+EmployeeSchema.virtual('full_name').get(function () {
+  return `${this.first_name} ${this.last_name}`
+})
 
-EmployeeSchema.pre('save', function(next) {
-  const employee = this;
-  if (!employee.isModified('password')) { return next(); }
+EmployeeSchema.pre('save', function (next) {
+  const employee = this
+  if (!employee.isModified('password')) { return next() }
   bcrypt.genSalt(10, (err, salt) => {
-    if (err) { return next(err); }
+    if (err) { return next(err) }
     bcrypt.hash(employee.password, salt, null, (err, hash) => {
-      if (err) { return next(err); }
-      employee.password = hash;
+      if (err) { return next(err) }
+      employee.password = hash
 
-      var currentDate = new Date();
-      employee.updated_at = currentDate;
+      var currentDate = new Date()
+      employee.updated_at = currentDate
       if (!employee.created_at) {
-        employee.created_at = currentDate;
+        employee.created_at = currentDate
       }
-      next();
-    });
-  });
-});
+      next()
+    })
+  })
+})
 
-EmployeeSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
+EmployeeSchema.methods.comparePassword = function comparePassword (candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-    cb(err, isMatch);
-  });
-};
+    cb(err, isMatch)
+  })
+}
 
-module.exports = mongoose.model('employee', EmployeeSchema);
+module.exports = mongoose.model('employee', EmployeeSchema)

@@ -1,8 +1,7 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-var webpack = require('webpack');
-var path = require('path');
-var clientConfig = {
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const path = require('path')
+const clientConfig = {
   target: 'web',
   context: __dirname,
   entry: './client/src/App.jsx',
@@ -48,5 +47,5 @@ var clientConfig = {
       }
     ]
   }
-};
-module.exports = clientConfig;
+}
+module.exports = clientConfig

@@ -1,30 +1,28 @@
-const express = require('express');
-const models = require('./DB/models');
-const bodyParser = require('body-parser');
-const path = require('path');
-const expressGraphQL = require('express-graphql');
-const session = require('express-session');
-const passport = require('passport');
-const passportService = require('./services/auth');
-const MongoStore = require('connect-mongo')(session);
-const cors = require('cors');
-const conn = require('./DB');
-const schema = require('./schema/schema');
-const { DB_URL, PASSPORT_SECRET } = process.env;
+const express = require('express')
+const bodyParser = require('body-parser')
+const path = require('path')
+const expressGraphQL = require('express-graphql')
+const session = require('express-session')
+const passport = require('passport')
+const passportService = require('./services/auth')
+const MongoStore = require('connect-mongo')(session)
+const cors = require('cors')
+const conn = require('./DB')
+const schema = require('./schema/schema')
+const { DB_URL, PASSPORT_SECRET } = process.env
 
-const app = express();
+const app = express()
 
-conn.on('error', console.error.bind(console, 'connection error:'));
+conn.on('error', console.error.bind(console, 'connection error:'))
 conn.once('open', () => {
-  console.log('Connected to the DB!');
-});
+  console.log('Connected to the DB!')
+})
 
+app.use(cors())
 
-app.use(cors());
-
-app.use(express.static(path.join(__dirname, '../client/public')));
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '../client/public')))
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 app.use(session({
   resave: true,
@@ -34,19 +32,18 @@ app.use(session({
     url: DB_URL,
     autoReconnect: true
   })
-}));
+}))
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use('/graphql', expressGraphQL({
   schema,
   graphiql: true
-}));
+}))
 
 app.use((err, req, res, next) => {
-  res.status(422).send({ error: err.message });
-});
+  res.status(422).send({ error: err.message })
+})
 
-
-module.exports = app;
+module.exports = app

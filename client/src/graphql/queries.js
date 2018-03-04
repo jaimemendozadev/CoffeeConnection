@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 export const getAllDrinks = gql`
   query AllDrinks {
@@ -9,7 +9,7 @@ export const getAllDrinks = gql`
       image_url
     }
   }
-`;
+`
 
 
 export const getCurrentEmployee = gql`
@@ -18,4 +18,4 @@ export const getCurrentEmployee = gql`
       name
     }
   } 
-`;
+`
