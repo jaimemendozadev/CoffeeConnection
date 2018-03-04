@@ -31,12 +31,6 @@ const clientConfig = {
   module: {
     rules: [
       {
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        use: 'eslint-loader',
-        exclude: /node_modules/
-      },
-      {
         test: /\.jsx?$/,
         use: 'babel-loader',
         exclude: /node_modules/
