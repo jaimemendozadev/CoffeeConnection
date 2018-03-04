@@ -16,6 +16,7 @@ import User from './components/User'
 import DrinkList from './components/DrinkList'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import CustomDrink from './components/CustomDrink'
 
 const cache = new InMemoryCache()
 
@@ -52,6 +53,7 @@ const App = () => (
           <Route exact path='/drinklist' component={DrinkList} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/login' component={Login} />
+          <Route exact path='/custom-drink' component={CustomDrink} />
           <Route component={FourOhFour} />
         </Switch>
       </div>

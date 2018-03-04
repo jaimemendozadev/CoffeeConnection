@@ -39,4 +39,8 @@ describe('CustomDrink', () => {
     });
   });
 
+  it('initially renders a SelectionPage for selecting either coffee or tea', () => {
+    expect(customDrink.find('SelectionPage').exists()).toBe(true);
+  })
+
 });

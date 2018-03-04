@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import SelectionPage from './SelectionPage'
 
 class CustomDrink extends Component {
   constructor (props) {
@@ -17,7 +18,8 @@ class CustomDrink extends Component {
   render () {
     return (
       <div>
-        <h1>CustomDrink</h1>
+        <h1>Create a Custom Drink</h1>
+        <SelectionPage />
       </div>
 
     )
