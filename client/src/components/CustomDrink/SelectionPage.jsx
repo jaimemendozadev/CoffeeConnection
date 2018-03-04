@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class SelectionPage extends Component {
-  render() {
+  render () {
     return (
       <div>SelectionPage</div>
     )

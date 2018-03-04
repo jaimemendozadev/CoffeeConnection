@@ -84,7 +84,8 @@
   "standard": {
     "ignore": [
       "server",
-      "seed"
+      "seed",
+      "__tests__"
     ]
   }
 }
