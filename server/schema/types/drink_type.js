@@ -1,11 +1,10 @@
-const graphql = require('graphql');
+const graphql = require('graphql')
 const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLID,
-  GraphQLBoolean,
   GraphQLList
-} = graphql;
+} = graphql
 
 const DrinkType = new GraphQLObjectType({
   name: 'DrinkType',
@@ -15,6 +14,6 @@ const DrinkType = new GraphQLObjectType({
     available_sizes: { type: new GraphQLList(GraphQLString) },
     image_url: {type: GraphQLString}
   }
-});
+})
 
-module.exports = DrinkType;
+module.exports = DrinkType

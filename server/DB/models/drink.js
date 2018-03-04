@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const DrinkSchema = new Schema({
   name: {
@@ -15,6 +15,6 @@ const DrinkSchema = new Schema({
   image_url: {
     type: String
   }
-});
+})
 
-module.exports = mongoose.model('drink', DrinkSchema);
+module.exports = mongoose.model('drink', DrinkSchema)

@@ -1,10 +1,10 @@
-const graphql = require('graphql');
+const graphql = require('graphql')
 const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLID,
   GraphQLBoolean
-} = graphql;
+} = graphql
 
 const EmployeeType = new GraphQLObjectType({
   name: 'EmployeeType',
@@ -15,6 +15,6 @@ const EmployeeType = new GraphQLObjectType({
     is_admin: { type: GraphQLBoolean },
     is_beverage_fetcher: { type: GraphQLBoolean }
   }
-});
+})
 
-module.exports = EmployeeType;
+module.exports = EmployeeType

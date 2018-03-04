@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const OrderSchema = new Schema({
   ordered_by: {
@@ -14,6 +14,6 @@ const OrderSchema = new Schema({
   selected_milk: String,
   other_options: String,
   created_at: { type: Date, default: Date.now }
-});
+})
 
-module.exports = mongoose.model('order', OrderSchema);
+module.exports = mongoose.model('order', OrderSchema)
