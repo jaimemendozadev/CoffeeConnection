@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Image } from 'react-bootstrap';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { Image } from 'react-bootstrap'
 
 export default class Home extends Component {
   render () {
@@ -15,7 +15,7 @@ export default class Home extends Component {
         <div><Link to='/signup'>Signup</Link></div>
         <div><Link to='/login'>Login</Link></div>
         <div><Link to='/'>Log Out</Link></div>
-        <Image circle src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/275px-A_small_cup_of_coffee.JPG"/>
+        <Image circle src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/275px-A_small_cup_of_coffee.JPG' />
       </div>
     )
   }

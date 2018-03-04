@@ -79,7 +79,8 @@
   },
   "standard": {
     "ignore": [
-      "server"
+      "server",
+      "seed"
     ]
   }
 }
