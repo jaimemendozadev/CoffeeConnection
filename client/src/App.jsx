@@ -8,6 +8,13 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { ApolloProvider } from 'react-apollo'
 import { ApolloLink } from 'apollo-link'
 import { withClientState } from 'apollo-link-state'
+import Employees from './components/Employees'
+import Home from './components/Home'
+import Public from './components/Public'
+import User from './components/User'
+import DrinkList from './components/DrinkList'
+import Signup from './components/Signup'
+import Login from './components/Login'
 
 const cache = new InMemoryCache()
 
@@ -27,14 +34,6 @@ const client = new ApolloClient({
   link: ApolloLink.from([stateLink, new HttpLink({ uri: 'http://localhost:3050/graphql' })]),
   cache
 })
-
-import Employees from './components/Employees'
-import Home from './components/Home'
-import Public from './components/Public'
-import User from './components/User'
-import DrinkList from './components/DrinkList'
-import Signup from './components/Signup'
-import Login from './components/Login'
 
 const FourOhFour = () => <h1>Uh Oh! 404 Page Not Found. Something happens!</h1>
 
