@@ -9,8 +9,7 @@
     "serve": "webpack-dev-server",
     "clean": "rimraf dist",
     "dbseed": "node seed/index.js",
-    "test": "jest",
-    "linting": "standard"
+    "test": "standard"
   },
   "repository": {
     "type": "git",
