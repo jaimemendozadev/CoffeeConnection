@@ -24,6 +24,13 @@ const defaultState = {
   currentEmployee: {
     __typename: 'EmployeeType',
     name: 'Enter Name'
+  },
+  createDrinkOrder: {
+    __typename: 'OrderType',
+    drink: 'drink',
+    selected_size: 'size',
+    selected_milk: 'milk',
+    other_options: []
   }
 }
 

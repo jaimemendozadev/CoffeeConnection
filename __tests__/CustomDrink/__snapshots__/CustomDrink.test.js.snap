@@ -21,7 +21,7 @@ ShallowWrapper {
         <h1>
           Create a Custom Drink
         </h1>,
-        <SelectionPage />,
+        <Apollo(SelectionPage) />,
       ],
     },
     "ref": null,
@@ -59,7 +59,7 @@ ShallowWrapper {
           <h1>
             Create a Custom Drink
           </h1>,
-          <SelectionPage />,
+          <Apollo(SelectionPage) />,
         ],
       },
       "ref": null,

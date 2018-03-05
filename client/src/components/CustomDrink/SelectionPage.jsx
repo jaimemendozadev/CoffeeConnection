@@ -1,11 +1,16 @@
 import React, {Component} from 'react'
+import { graphql } from 'react-apollo'
+import * as queries from '../../graphql/queries.js'
+import gql from 'graphql-tag'
 
-class SelectionPage extends Component {
-  render () {
-    return (
-      <div>SelectionPage</div>
-    )
-  }
-}
+const {CreateOrder} = queries;
 
-export default SelectionPage
+export const SelectionPage = (props) => (
+  <div>
+    <h1>What Drink Would You Like?</h1>
+    <button>Coffee</button>
+    <button>Tea</button>
+  </div>
+)
+
+export default graphql(CreateOrder)(SelectionPage);

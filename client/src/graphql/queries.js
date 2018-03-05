@@ -11,10 +11,21 @@ export const getAllDrinks = gql`
   }
 `
 
-export const getCurrentEmployee = gql`
-  query getCurrentEmployee {
+export const GetCurrentEmployee = gql`
+  query GetCurrentEmployee {
     currentEmployee @client {
       name
     }
   } 
+`
+
+export const CreateOrder = gql`
+  query CreateOrder {
+    createDrinkOrder @client {
+      drink
+      selected_size
+      selected_milk
+      other_options
+    }
+  }
 `
